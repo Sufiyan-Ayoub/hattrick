@@ -1,0 +1,67 @@
+$vars: (
+    primary: #74dff6,
+    primary-hover: #36d0f3,
+    primary-dim: #f6e0ed,
+    secondary: #004db1,
+    secondary-hover: #913ba0,
+    radius: 30px,
+    padding-h: 5vw,
+);
+
+$light: (
+    body: #e6f5f5,
+    text: #111,
+    btn-text: #fff,
+    border-dark: #6a7692,
+    border: hsl(224, 28%, 84%),
+    input: #fff,
+    input-border: 1px solid var(--dborder),
+    cover-bg: rgba(255, 255, 255, 0.76),
+    switch-checked: #c756a0,
+    button-link: #fff,
+    button-link-border: #fff,
+    footer-bg: #FFF,
+    search-color: var(--border),
+);
+
+$dark: (
+    body: #222,
+    cover-bg: rgba(34,34,34,0.8),
+    text: #e6eaf2,
+    button-link: #444,
+    button-link-border: #555,
+);
+
+body {
+
+    color-scheme: light dark;
+
+    @each $name, $value in $vars{
+        --#{$name}: #{$value};
+    }
+
+    
+    @each $name, $value in $light {
+        --#{$name}: #{$value};
+    }   
+
+    @media (min-width: 1400px) {
+        --padding-h: 10vw; 
+    }
+    
+}
+
+[color-scheme="dark"] {
+    body{
+        @each $name, $value in $dark {
+            --#{$name}: #{$value};
+        }
+    }
+}
+
+html, body {
+  background: var(--body);
+  color: var(--text);
+}
+
+a{ color: var(--text); user-select: none; }

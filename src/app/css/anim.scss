@@ -1,0 +1,54 @@
+@keyframes pulse-soft {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Floating animation (slow up-down motion) */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.anim-pulse {
+    animation: pulse-soft 6s ease-in-out infinite;
+}
+
+.anim-float {
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes flicker {
+    from {
+        background-size: 50px 50px;
+        background-position: 100% 100%;
+    }
+
+    to {
+        background-size: 500px 500px;
+        background-position: 0% 0%;
+    }
+}
